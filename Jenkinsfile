@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-password') {
-                               def customImage = docker.build(" saidocker999/bmi-react:${env.BUILD_ID}")
+                            def customImage = docker.build("saidocker999/bmi-react:${env.BUILD_ID}")
 
                             /* Push the container to the custom Registry */
                             customImage.push()
