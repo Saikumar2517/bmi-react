@@ -32,16 +32,16 @@ pipeline {
                 }
             }
         }
-    // stage('test') {
-    //     steps {
-    //         script {
-    //             def scannerHome = tool 'sonar'
-    //             withSonarQubeEnv(credentialsId: 'sonar-pass') {
-    //                 sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=bmi"
-    //             }
-    //         }
-    //     }
-    // }
+    stage('test') {
+        steps {
+            script {
+                def scannerHome = tool 'sonar'
+                withSonarQubeEnv(credentialsId: 'sonar-pass') {
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=latestapp"
+                }
+            }
+        }
+    }
     // stage('Deploy') {
     //     steps {
     //         script {
