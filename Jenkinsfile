@@ -26,7 +26,7 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'docker-password', toolName: 'docker', url: 'https://index.docker.io/v1') {
                         /* groovylint-disable-next-line UnusedVariable */
-                        def customImage = docker.build("saidocker999/bmi-react:${env.BUILD_ID}")
+                        def customImage = docker.build("saidocker999/latestapp:${env.BUILD_ID}")
                         customImage.push()
                     // some block
                     }
